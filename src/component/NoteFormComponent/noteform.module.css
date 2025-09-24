@@ -1,0 +1,57 @@
+.createNoteContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.createNoteContainer form {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 5px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  border-radius: 15px;
+
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  transition: all 0.8s ease;
+}
+
+.createNoteContainer form.show {
+  max-height: 500px;   /* big enough to fit content */
+  opacity: 1;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.formBtns {
+  margin-top: 10px;
+  justify-content: center;
+  display: flex;
+  gap: 15px;
+}
+
+formButton {
+  color: antiquewhite;
+}
+
+.btnAddNote {
+  background-color: skyblue;
+}
+
+.btnCancelNote {
+  background-color: orangered;
+}
