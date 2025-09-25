@@ -1,16 +1,8 @@
 import {React, useState} from "react";
-import noteData from "../data/noteData.js";
+import noteData from "../../../data/noteData.js";
 
-function NoteListComponent() {
+function NoteListComponent({notes, onDeleteNote}) {
   
-  const [notes, setNotes] = useState(noteData);
-  
-  
- const deleteNote = (index) => {
-    const updatedNotes = [...notes];
-    updatedNotes.splice(index, 1);
-    setNotes(updatedNotes);
-  };
 
 
   return (
@@ -44,7 +36,7 @@ function NoteListComponent() {
                       type="button"
                       id={`delete-btn-${index}`}
                       className="btn btn-danger btn-sm m-1"
-                      onClick={()=>deleteNote(index)}
+                      onClick={()=>onDeleteNote(index)}
                     >
                       Delete
                     </button>

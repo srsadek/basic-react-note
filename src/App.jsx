@@ -1,7 +1,5 @@
 import './App.css'
-import NoteComponent from './component/NoteComponent';
-import NoteFormComponent from './component/NoteFormComponent/NoteFormComponent.jsx';
-import NoteListComponent from './component/NoteListComponent.jsx';
+import NoteComponent from './component/notes/NoteComponent';
 
 
 function App() {
@@ -11,8 +9,7 @@ function App() {
     <div>
       <h1>Welcome to Notes</h1>
       <p>Hello, {user} </p>
-      <NoteListComponent/>
-      <NoteFormComponent/>
+      <NoteComponent />
     </div>
   )
 }
