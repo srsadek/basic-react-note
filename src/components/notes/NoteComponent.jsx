@@ -12,18 +12,23 @@ function NoteComponent() {
     setNotes(added)
   }
 
-   const deleteNote = (index) => {
-    const updatedNotes = [...notes];
-    updatedNotes.splice(index, 1);
+   const deleteNote = (indexArr) => {
+    let updatedNotes = notes.filter((_, index) => !indexArr.includes(index));
     setNotes(updatedNotes);
   };
+
+  const updateNote  = (index, newNote) =>{
+      let updated = [...notes];
+      updated[index] = newNote;
+      setNotes(updated);
+  }
 
 
 
   return (
     <>
-        <NoteListComponent notes={notes} onDeleteNote={deleteNote}/>
-        <NoteFormComponent onNoteAdd = {addNote}/>
+        <NoteListComponent notes={notes} onDeleteNote={deleteNote} onUpdateNote = {updateNote}/>
+        <NoteFormComponent onNoteAdd = {addNote} />
     </>
   )
 }

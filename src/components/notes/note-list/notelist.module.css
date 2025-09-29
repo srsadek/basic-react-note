@@ -1,0 +1,31 @@
+.dropdown {
+  max-height: 0;           /* start hidden */
+  overflow: hidden;        /* hide overflowing text */
+  transition: max-height 0.5s ease, padding 0.3s ease;
+  padding: 0 0;            /* no padding when hidden */
+}
+
+.open {
+  max-height: 200px;       /* enough to show content */
+  padding: 5px 0;          /* restore padding */
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.deleteSelected {
+  display: flex;
+  justify-content: end;
+  margin: 15px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.deleteSelected.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
